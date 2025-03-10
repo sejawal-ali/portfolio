@@ -25,32 +25,26 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
+// Accordian Section
+
+
 const skillsContent = document.getElementsByClassName('skills__content'),
-      skillsHeader = document.querySelectorAll('.skills__header');
-
-function toggleSkills() {
-    let itemClass = this.parentNode.classList; 
+  skillsHeader = document.querySelectorAll('.skills__header')
 
 
-    if (itemClass.contains('skills__open')) {
-        itemClass.remove('skills__open');
-        itemClass.add('skills__close');
-    } else {
-        
-        for (let i = 0; i < skillsContent.length; i++) {
-            skillsContent[i].classList.remove('skills__open');
-            skillsContent[i].classList.add('skills__close');
-        }
-
-       
-        itemClass.remove('skills__close');
-        itemClass.add('skills__open');
+  function toggleSkills() {
+    let itemClass = this.parentNode.className
+    for (i = 0; i < skillsContent.length; i++) {
+        skillsContent[i].className = 'skills__content skills__close'
     }
-}
+    if (itemClass === 'skills__content skills__close') {
+        this.parentNode.className = 'skills__content skills__open'
+    }
+  }
 
-skillsHeader.forEach((toggle) => {
-    toggle.addEventListener('click', toggleSkills);
-});
+  skillsHeader.forEach((el) => {
+    el.addEventListener('click', toggleSkills)
+  })
 
 
 

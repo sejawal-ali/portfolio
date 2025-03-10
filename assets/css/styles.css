@@ -546,12 +546,20 @@ img {
   width: 80%;
 }
 
+.skills__firebase{
+  width: 60%;
+}
+
+.skills__redux{
+  width: 50%;
+}
+
 .skills__close .skills__list {
   height: 0;
   overflow: hidden;
 }
 
-.skills__open .skills__list {
+.skills__open .skills__list{
   height: max-content;
   margin-bottom: var(--mb-2-5);
 
